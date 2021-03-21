@@ -17,15 +17,15 @@
     <node name="spectator" pkg="chess" type="spectator_node.py"
           output="screen" />
 
-    <!-- Launch the white player's node. Adjust as necessary. -->
-    <node name="white" pkg="chess" type="player_node.py">
-        <param name="player" value="white" />
-        <param name="device" value="$(arg white)" />
-    </node>
-
     <!-- Launch the black player's node. Adjust as necessary. -->
     <node name="black" pkg="chess" type="player_node.py">
         <param name="player" value="black" />
         <param name="device" value="$(arg black)" />
+    </node>
+
+    <!-- Launch the white player's node. Adjust as necessary. -->
+    <node name="white" pkg="chess" type="player_node.py">
+        <param name="player" value="white" />
+        <param name="device" value="$(arg white)" />
     </node>
 </launch>
