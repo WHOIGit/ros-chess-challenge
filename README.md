@@ -6,11 +6,11 @@ A chess engine is provided to you. You will write a single "driver" node but two
 
 The driver should connect to the chess engine "serial device" and initialize the game (see below).
 
-The node representing the white player goes first, asking its engine to make a move. This move should be published to the `/white/move` topic as a `chess/Move` message.
+The node representing the white player goes first, asking its engine to make a move. This move is published to the `/white/move` topic as a `chess/Move` message.
 
-If the player captured a piece, a `chess/Chesspiece` message must be published to `/white/capture`. 
+If the player captured a piece, a `chess/Chesspiece` message is published to `/white/capture`. 
 
-The new state of the chessboard (a `chess/Chessboard` message) must be published to `/chessboard`.
+The new state of the chessboard (a `chess/Chessboard` message) is published to `/chessboard`.
 
 Finally, a `std_msgs/Empty` message is published to `/white/done` to signal the black player's turn to move.
 
@@ -75,7 +75,7 @@ Moves are represented by a pair of coordinates; `g1f3` conveys the movement of a
 
 This project was developed against ROS Melodic and Ubuntu 18.04, but you may opt to use ROS Noetic and Ubuntu 20.04 at your preference. (Please contact us if you encounter any difficulty.)
 
-You may write your solution in C++ or Python. Please use Python 3 if targeting ROS Noetic.
+You may write your solution in C++ or Python. If you choose to implement in Python on ROS Noetic, use Python 3.
 
 You should test your solution with `roslaunch chess chess.launch`. You may modify `chess.launch` as necessary to start your nodes.
 
@@ -86,6 +86,10 @@ You may need to install additional tools:
         python-catkin-tools \
         socat
 
+The Stockfish sources are included as a Git submodule, which must be pulled with:
+
+    git submodule update --init --recursive
+
 In Python, you can use [pySerial][] for interfacing with the "serial port".
 
   [pySerial]: https://pyserial.readthedocs.io/en/latest/pyserial.html
@@ -95,8 +99,8 @@ In Python, you can use [pySerial][] for interfacing with the "serial port".
 
 You can reach out for clarification on any point, or if you get stuck and need a hint. We aren't expecting to find candidates who never get stuck.
 
-Stockfish is sometimes fickle, and can do strange things such as trying to move from an empty square. Your nodes should be able to play several turns without error. (If you find the root cause, let us know!)
-
 Be mindful that your code will be reviewed to evaluate your proficiency with ROS and your chosen language. Favor clarity of intent over brevity.
 
-A solution in Python is possible in under 250 lines, excluding comments.
+If Stockfish seems to make an illegal move, it is likely that you have a bug in your model of the game state.
+
+A solution in Python is possible in under 250 lines. This is not a limit.
