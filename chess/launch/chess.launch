@@ -1,0 +1,31 @@
+<launch>
+    <!-- Our faux "serial" devices for each player. -->
+    <arg name="black" default="/tmp/engine-black" />
+    <arg name="white" default="/tmp/engine-white" />
+
+    <!-- Launch an instance of the chess engine for each player. -->
+    <include file="$(find stockfish)/launch/stockfish.launch">
+        <arg name="name" value="stockfish_white" />
+        <arg name="device" value="$(arg white)" />
+    </include>
+    <include file="$(find stockfish)/launch/stockfish.launch">
+        <arg name="name" value="stockfish_black" />
+        <arg name="device" value="$(arg black)" />
+    </include>
+
+    <!-- Launch the spectator node. -->
+    <node name="spectator" pkg="chess" type="spectator_node.py"
+          output="screen" />
+
+    <!-- Launch the white player's node. Adjust as necessary. -->
+    <node name="white" pkg="chess" type="player_node.py">
+        <param name="player" value="white" />
+        <param name="device" value="$(arg white)" />
+    </node>
+
+    <!-- Launch the black player's node. Adjust as necessary. -->
+    <node name="black" pkg="chess" type="player_node.py">
+        <param name="player" value="black" />
+        <param name="device" value="$(arg black)" />
+    </node>
+</launch>

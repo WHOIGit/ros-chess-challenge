@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>chess</name>
+  <version>0.0.0</version>
+  <description>The chess package</description>
+  <maintainer email="user@todo.todo">user</maintainer>
+  <license>TODO</license>
+
+  <build_depend>message_generation</build_depend>
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>rospy</depend>
+  <depend>std_msgs</depend>
+  <exec_depend>stockfish</exec_depend>
+</package>

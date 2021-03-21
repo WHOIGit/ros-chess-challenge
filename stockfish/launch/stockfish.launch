@@ -1,0 +1,6 @@
+<launch>
+    <arg name="device" />
+    <arg name="name" default="stockfish" />
+
+    <node name="$(arg name)" pkg="stockfish" type="stockfish_starter.sh" args="$(arg device)" />
+</launch>

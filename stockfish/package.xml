@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>stockfish</name>
+  <version>0.0.0</version>
+  <description>The Stockfish chess engine</description>
+
+  <maintainer email="user@todo.todo">user</maintainer>
+  <license>GPLv3</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>make</buildtool_depend>
+
+  <exec_depend>socat</exec_depend>
+</package>
