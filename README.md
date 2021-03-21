@@ -25,7 +25,7 @@ The chess engine used in this project is [Stockfish][]. It is wrapped up in a RO
 
   [stockfish]: https://stockfishchess.org
 
-For added flavor, you will be communicate with Stockfish over a pseudoterminal (or PTY), which acts like a serial port device.
+For added flavor, you will be communicating with Stockfish over a pseudoterminal (or PTY), which acts like a serial port device.
 
 Once your ROS workspace is set up, you can use the provided launch file to start Stockfish with a "serial device" at `/tmp/stockfish`:
 
