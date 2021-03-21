@@ -63,7 +63,7 @@ To ask the engine to make a move:
 
 Moves are represented by a pair of coordinates; `g1f3` conveys the movement of a piece from column G, row 1 to column F, row 3. There are two special cases:
 
-1. When a pawn reaches the opposite side of the board, it may be [promoted][promotion] to another kind of piece, usually a queen. In this case, the move is represented as above with an additional character representing the new kind, **q** for queen, **r** for rook, **n** for knight, **b** for bishop, as in: `c2c3q`.
+1. When a pawn reaches the opposite side of the board, it may be [promoted][promotion] to another kind of piece, usually a queen. In this case, the move is represented as above with an additional character representing the new kind, **q** for queen, **r** for rook, **n** for knight, **b** for bishop, as in: `c2c1q`.
 
 2. When [castling][], the king moves two positions towards a rook, e.g., `e1g1`, and the rook "jumps" to the square the king crossed (`h1f1`). *Only* the king's move is expressed to the engine.
 
