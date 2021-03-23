@@ -51,13 +51,13 @@ To set up the game:
 
   2. The driver sends `uci` to enable the UCI protocol. The engine sends back some information (ignore it) followed by `uciok`.
 
-  3. The driver begins a new game with `ucinewgame`.
+  3. The driver begins a new game with `ucinewgame`. There is no response.
 
   4. The driver inquires if the engine is ready with `isready`, and the engine replies `readyok`.
 
 To ask the engine to make a move:
 
-  1. The driver sends `position startpos moves` followed by a space-delimited list of the moves that have taken place so far, if any. There is no response.
+  1. The driver sends `position startpos moves` followed by a space-delimited list of all the moves that have taken place in the game so far, if any. There is no response.
 
   2. The driver asks the engine to make a move. For instance, `go movetime 1000` limits the engine to find a move in one second. The engine replies with (for example) `bestmove c7c5` (anything else can be ignored).
 
