@@ -73,9 +73,9 @@ Moves are represented by a pair of coordinates; `g1f3` conveys the movement of a
 
 ## Technical Requirements
 
-This project was developed against ROS Melodic and Ubuntu 18.04, but you may opt to use ROS Noetic and Ubuntu 20.04 at your preference. (Please contact us if you encounter any difficulty.)
+Please use ROS Noetic on Ubuntu 20.04. (Please contact us if you encounter any difficulty.)
 
-You may write your solution in C++ or Python. If you choose to implement in Python on ROS Noetic, use Python 3.
+You may write your solution in C++ or Python 3.
 
 You should test your solution with `roslaunch chess chess.launch`. You may modify `chess.launch` as necessary to start your nodes.
 
