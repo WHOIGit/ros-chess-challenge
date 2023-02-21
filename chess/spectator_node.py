@@ -1,9 +1,4 @@
-#!/usr/bin/env python2
-# -*- coding: utf-8 -*-
-from __future__ import print_function
-
-import functools
-
+#!/usr/bin/env python3
 import rospy
 
 from chess.msg import Chessboard, Chesspiece, Player
